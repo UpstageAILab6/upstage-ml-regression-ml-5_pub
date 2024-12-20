@@ -38,7 +38,7 @@ e.g.
 │   └── train.py
 ├── docs
 │   ├── pdf
-│   │   └── (Template) [패스트캠퍼스] Upstage AI Lab 1기_그룹 스터디 .pptx
+│   │   └── (Template) [패스트캠퍼스] Upstage AI Lab N기_그룹 스터디 .pptx
 │   └── paper
 └── input
     └── data
