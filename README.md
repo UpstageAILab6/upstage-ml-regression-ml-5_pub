@@ -15,21 +15,28 @@
 
 ## 0. Overview
 ### Environment
-- _Write Development environment_
+- Jupyter Notebook
+- Ubuntu
+- VScode
+- python
+- numpy, pandas
+- sklearn
+- matplotlib, seaborn
 
 ### Requirements
-- _Write Requirements_
+- 데이터 전처리, 이상치 제거, feature engineering을 통한 모델 학습
+- 모델 성능 향상상으로 인한 RMSE 개선
 
 ## 1. Competiton Info
 
 ### Overview
 
-- _Write competition information_
-
+- House Price Prediction | 아파트 실거래가 예측
+- 서울시 아파트 실거래가 매매 데이터를 기반으로 아파트 가격을 예측하는 대회
 ### Timeline
 
-- ex) January 10, 2024 - Start Date
-- ex) February 10, 2024 - Final submission deadline
+- December 23, 2024 - Start Date
+- January 7, 2025 - Final submission deadline
 
 ## 2. Components
 
@@ -40,17 +47,19 @@
 e.g.
 ```
 ├── code
-│   ├── jupyter_notebooks
-│   │   └── model_train.ipynb
-│   └── train.py
-├── docs
-│   ├── pdf
-│   │   └── (Template) [패스트캠퍼스] Upstage AI Lab N기_그룹 스터디 .pptx
-│   └── paper
-└── input
-    └── data
-        ├── eval
-        └── train
+│   └── jupyter_notebooks
+│       └── baseline_code.ipynb   
+├── input
+│    └── data
+│        ├── train.csv
+│        ├── test.csv
+│        ├── concat_coordinate.csv
+│        ├── bus_feature.csv
+│        └── subway_feature.csv
+│
+└── output
+     └── data
+          └── output.csv 
 ```
 
 ## 3. Data descrption
@@ -69,9 +78,10 @@ e.g.
 
 ## 4. Modeling
 
-### Model descrition
+### Model description
 
-- _Write model information and why your select this model_
+- 회귀모델에 쓰이는 부스팅계열의 model인 xgboost 사용
+- 캐글의 house price prediction 대회에서도 좋은 성능을 보인다는 자료에 참고하여 사용
 
 ### Modeling Process
 
