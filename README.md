@@ -1,109 +1,126 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/pjJxrz8e)
-# Title (Please modify the title)
-## Team
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/AgKyaspd)
+# **영화 평점 예측 프로젝트**
 
-| ![박패캠](https://avatars.githubusercontent.com/u/156163982?v=4) | ![이패캠](https://avatars.githubusercontent.com/u/156163982?v=4) | ![최패캠](https://avatars.githubusercontent.com/u/156163982?v=4) | ![김패캠](https://avatars.githubusercontent.com/u/156163982?v=4) | ![오패캠](https://avatars.githubusercontent.com/u/156163982?v=4) |
-| :--------------------------------------------------------------: | :--------------------------------------------------------------: | :--------------------------------------------------------------: | :--------------------------------------------------------------: | :--------------------------------------------------------------: |
-|            [김태홍![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/pjJxrz8e)
-# Title (Please modify the title)
-## Team
+MLOps 프로젝트의 간단한 소개와 목적을 작성합니다.
 
-| ![박패캠](https://avatars.githubusercontent.com/u/156163982?v=4) | ![이패캠](https://avatars.githubusercontent.com/u/156163982?v=4) | ![최패캠](https://avatars.githubusercontent.com/u/156163982?v=4) | ![김패캠](https://avatars.githubusercontent.com/u/156163982?v=4) | ![오패캠](https://avatars.githubusercontent.com/u/156163982?v=4) |
-| :--------------------------------------------------------------: | :--------------------------------------------------------------: | :--------------------------------------------------------------: | :--------------------------------------------------------------: | :--------------------------------------------------------------: |
-|            [김태홍](https://github.com/UpstageAILab)             |            [김지후](https://github.com/KJH121212)             |            [진우재](https://github.com/UpstageAILab)             |            [천창현](https://github.com/UpstageAILab)             |            [오패캠](https://github.com/UpstageAILab)             |
-|                            팀장, 담당 역할                             |                            담당 역할                             |                            담당 역할                             |                            담당 역할                             |                            담당 역할                             |
+- **프로젝트 기간:** 2025.01.16 \~ 2025.02.03
+- **주제** : 영화 평점 예측 프로젝트
+- **배포 링크:** [서비스 바로가기]\(링크 입력) *(필요 시 추가)*
 
-## 0. Overview
-### Environment
-- Jupyter Notebook
-- Ubuntu
-- VScode
-- python
-- numpy, pandas
-- sklearn
-- matplotlib, seaborn
+---
 
-### Requirements
-- 데이터 전처리, 이상치 제거, feature engineering을 통한 모델 학습
-- 모델 성능 향상상으로 인한 RMSE 개선
+# **팀원 소개**
 
-## 1. Competiton Info
+| 이름      | 역할         | GitHub              | 담당 기능                     |
+| ------- | ---------- | ------------------- | ------------------------- |
+| **강병무** | 팀장/백엔드 개발자 | [GitHub 링크]\(링크 입력) | 서버 구축, API 개발, 배포 관리      |
+| **박정은** | MLOps 엔지니어 | [GitHub 링크]\(링크 입력) | CI/CD 파이프라인 구축, 배포 및 모니터링 |
+| **손봉교** | 데이터 사이언티스트  | [GitHub 링크]\(링크 입력) | AI 모델 선정 및 학습, 데이터 분석     |
+| **이해울** | 데이터 엔지니어   | [GitHub 링크]\(링크 입력) | 데이터 수집, 전처리, DVC 관리       |
+| **정혜린** | 데이터 엔지니어   | [GitHub 링크]\(링크 입력) | 데이터 수집, 전처리, DVC 관리       |
 
-### Overview
+---
 
-- House Price Prediction | 아파트 실거래가 예측
-- 서울시 아파트 실거래가 매매 데이터를 기반으로 아파트 가격을 예측하는 대회
-### Timeline
+# **MLOps 파이프라인 워크플로우**
 
-- December 23, 2024 - Start Date
-- January 7, 2025 - Final submission deadline
+구축된 MLOps 파이프라인의 전반적인 워크플로우를 아래와 같이 설명합니다.
 
-## 2. Components
+## **1.비즈니스 문제 정의**
+- 비즈니스 목표 정의 및 KPI(Key Performance Indicator) 설정
+- 모델의 예상 활용 시나리오를 포함하여 데이터와 모델 결과물이 비즈니스에 어떻게 기여할지를 구체화
 
-### Directory
 
-- _Insert your directory structure_
+## **2.데이터 탐색 및 전처리**
+1. **데이터 수집**
+   - 다양한 소스(데이터베이스, API, 로그 등)에서 데이터를 수집하여 AWS S3에 업로드.
+   
+2. **데이터 버전 관리**
+   - DVC(Data Version Control)를 활용해 원시 데이터(raw data)와 주요 버전(versioned data) 관리.
 
-e.g.
-```
-├── code
-│   └── jupyter_notebooks
-│       └── baseline_code.ipynb   
-├── input
-│    └── data
-│        ├── train.csv
-│        ├── test.csv
-│        ├── concat_coordinate.csv
-│        ├── bus_feature.csv
-│        └── subway_feature.csv
-│
-└── output
-     └── data
-          └── output.csv 
-```
+3. **데이터 탐색**
+   - 데이터 분포, 결측치, 이상치 등을 탐색 후 초기 분석(EDA) 수행.
 
-## 3. Data descrption
+4. **데이터 전처리**
+   - 결측값 처리, 이상치 제거, 피처 엔지니어링, 스케일링 등 전처리 수행 결과를 DVC로 관리.
 
-### Dataset overview
+5. **데이터 검증**
+   - DataDrift 도구(예: Great Expectations)로 데이터 품질과 안정성 검증.
 
-- _Explain using data_
 
-### EDA
+## **3.모델 학습 및 튜닝**
+- **자동화된 학습 파이프라인**
+  - 파이프라인 도구(예: Kubeflow, Apache Airflow)를 사용하여 모델 학습, 검증, 저장 과정을 자동화.
 
-- _Describe your EDA process and step-by-step conclusion_
+- **하이퍼파라미터 최적화**
+  - Optuna 또는 Hyperopt와 같은 도구를 MLflow와 통합하여 하이퍼파라미터 최적화를 자동화.
 
-### Data Processing
+- **MLflow를 사용한 버전 관리**
+  - 실험(Experiment)을 정의하고 매개변수, 메트릭, 모델을 추적 및 저장.
 
-- _Describe data processing process (e.g. Data Labeling, Data Cleaning..)_
 
-## 4. Modeling
+## **4.모델 검증 및 평가**
+1. **검증 메트릭 정의**
+   - Precision, Recall, F1 Score, AUC 등 비즈니스 문제에 적합한 메트릭을 설정.
 
-### Model description
+2. **교차 검증**
+   - 데이터 샘플링 편향을 방지하기 위해 교차 검증 수행.
 
-- 회귀모델에 쓰이는 부스팅계열의 model인 xgboost 사용
-- 캐글의 house price prediction 대회에서도 좋은 성능을 보인다는 자료에 참고하여 사용
+3. **테스트 환경 평가**
+   - 새로운 데이터에 대한 모델 성능을 평가하고 Drift 또는 Bias 검출.
 
-### Modeling Process
 
-- _Write model train and test process with capture_
+## **5.모델 배포**
+1. **모델 패키징**
+   - Docker 이미지를 생성하고 테스트.
 
-## 5. Result
+2. **컨테이너 레지스트리**
+   - 생성된 Docker 이미지를 컨테이너 레지스트리(예: Amazon ECR)에 업로드.
 
-### Leader Board
+3. **Kubernetes 클러스터 배포**
+   - Helm Chart 또는 Terraform을 활용한 자동화된 클러스터 배포.
 
-- _Insert Leader Board Capture_
-- _Write rank and score_
+4. **실시간 예측 서비스**
+   - REST API 또는 gRPC 기반으로 모델을 배포하고 A/B 테스트 또는 Canary Deployment 수행.
 
-### Presentation
 
-- _Insert your presentaion file(pdf) link_
+## **6.모니터링 및 피드백**
+1. **모델 성능 모니터링**
+   - Prometheus와 Grafana를 사용하여 Latency, Throughput, 예측 정확도를 실시간으로 모니터링.
 
-## etc
+2. **데이터 품질 모니터링**
+   - 데이터 Drift 및 품질 검증을 자동화하는 도구(예: Evidently AI)를 활용.
 
-### Meeting Log
+3. **피드백 루프**
+   - 사용자 피드백 및 새로운 데이터를 수집하여 학습 데이터 업데이트.
 
-- _Insert your meeting log link like Notion or Google Docs_
+4. **자동 재학습**
+   - 새로운 데이터가 충분히 누적되면 학습 파이프라인이 트리거되어 모델 재학습 수행.
 
-### Reference
+---
 
-- _Insert related reference_
+## **활용 장비 및 사용 툴**
+
+
+### **활용 장비**
+
+- **서버 장비:** AWS EC2 m5.large
+- **개발 환경:** Ubuntu 22.04
+- **테스트 장비:** NVIDIA Tesla V100 GPU 서버
+
+
+### **협업 툴**
+
+- **소스 관리:** GitHub
+- **프로젝트 관리:** Notion
+- **커뮤니케이션:** 카카오톡, Slack
+- **버전 관리:** Git
+
+
+### **사용 툴**
+
+- **CI/CD 도구:** GitHub Actions, Jenkins
+- **모델 학습 및 배포:** MLflow
+- **데이터 저장 및 관리:** AWS S3, DVC
+- **모니터링 및 로깅:** Prometheus, Grafana, ELK Stack
+- **컨테이너화:** Docker, Kubernetes
+
